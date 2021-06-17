@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-pod
+spec:
+  containers:
+  - name: tomcat
+    image: httpd
+    resources:
+      limits:
+        memory: "256M"
+        cpu: "500m"
+      requests:
+        memory: "64M"
+        cpu: "100m"

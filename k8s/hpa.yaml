@@ -1,0 +1,14 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hello-deploy1
+spec:
+  maxReplicas: 10
+  minReplicas: 2
+  scaleTargetRef:
+    kind: Deployment
+    name: hello-deploy1
+  targetCPUUtilizationPercentage: 50
+status:
+  currentReplicas: 2
+  desiredReplicas: 0
